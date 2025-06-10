@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So‘rovnoma</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="wrapper-form">
+        <form id="mainForm">
+            <!-- Error bar for form validation -->
+            <div id="formErrorBar" style="display:none; background:#e53e3e; color:white; padding:12px; border-radius:8px; margin-bottom:18px; text-align:center; font-weight:500;">
+                Iltimos, barcha maydonlarni to'ldiring!
+            </div>
+            <h2>So'rovnomani to'ldirib chiqing</h2>
+
+            <div class="card">
+                <label for="familiya">Familiya *</label>
+                <input type="text" id="familiya" name="familiya" required>
+            </div>
+            <div class="card">
+                <label for="ism">Ism *</label>
+                <input type="text" id="ism" name="ism" required>
+            </div>
+            <div class="card">
+                <label for="telefon">Telefon raqam *</label>
+                <input type="number" id="telefon" name="telefon" required>
+            </div>
+            <div class="card">
+                <label for="uy_telefon">Uydagilarning telefon raqami *</label>
+                <input type="number" id="uy_telefon" name="uy_telefon" required>
+            </div>
+            <div class="card">
+                <label for="yonalish">Qaysi yo'nalish (fakultetda) o'qimoqchisiz? *</label>
+                <input type="text" id="yonalish" name="yonalish" required>
+            </div>
+            <div class="card">
+                <label for="joy">Hozirda o'qiydigan joyingiz *</label>
+                <input type="text" id="joy" name="joy" required>
+            </div>
+            <div class="card">
+                <label>Ta'lim turi *</label>
+                <div>
+                    <input type="radio" id="onlayn" name="talim_turi" value="onlayn" required>
+                    <label for="onlayn">Onlayn</label>
+                </div>
+                <div>
+                    <input type="radio" id="offlayn" name="talim_turi" value="offlayn">
+                    <label for="offlayn">Offlayn</label>
+                </div>
+            </div>
+            <div class="card">
+                <label for="why_study">Nima uchun Rossiyada o'qishni xohlaysiz? *</label>
+                <input type="text" id="why_study" name="why_study" required>
+            </div>
+            <div class="card">
+                <label for="why_study_top">Nima uchun Top universitetda o'qishni xohlaysiz? *</label>
+                <input type="text" id="why_study_top" name="why_study_top" required>
+            </div>
+            <div class="card">
+                <label for="lavozim">Kelajakda o'zingizni qanday lavozimda ko'rayapsiz? *</label>
+                <input type="text" id="lavozim" name="lavozim" required>
+            </div>
+            <div class="card">
+                <label>Rus tilini bilish darajasi *</label>
+                <div>
+                    <input type="radio" id="rus_yaxshi" name="rus_daraja" value="Yaxshi bilaman" required>
+                    <label for="rus_yaxshi">Yaxshi bilaman</label>
+                </div>
+                <div>
+                    <input type="radio" id="rus_gap" name="rus_daraja" value="Gaplasha olaman">
+                    <label for="rus_gap">Gaplasha olaman</label>
+                </div>
+                <div>
+                    <input type="radio" id="rus_bilmayman" name="rus_daraja" value="Bilmayman">
+                    <label for="rus_bilmayman">Bilmayman</label>
+                </div>
+            </div>
+            <div class="card">
+                <label>Ingliz tilini bilish darajasi *</label>
+                <div>
+                    <input type="radio" id="ingliz_yaxshi" name="ingliz_daraja" value="Yaxshi bilaman" required>
+                    <label for="ingliz_yaxshi">Yaxshi bilaman</label>
+                </div>
+                <div>
+                    <input type="radio" id="ingliz_gap" name="ingliz_daraja" value="Gaplasha olaman">
+                    <label for="ingliz_gap">Gaplasha olaman</label>
+                </div>
+                <div>
+                    <input type="radio" id="ingliz_bilmayman" name="ingliz_daraja" value="Bilmayman">
+                    <label for="ingliz_bilmayman">Bilmayman</label>
+                </div>
+            </div>
+            <div class="card">
+                <label for="sertifikat">Til sertifikatingiz bormi? (bor bo'lsa to'liq izohlang) *</label>
+                <input type="text" id="sertifikat" name="sertifikat" required>
+            </div>
+            <div class="card" id="russian-university-question">
+                <label>Rossiya universitetlarida o'qishni xohlaysizmi? *</label>
+                <div>
+                    <input type="radio" id="study_russia_yes" name="study_russia" value="yes" required>
+                    <label for="study_russia_yes">Ha</label>
+                </div>
+                <div>
+                    <input type="radio" id="study_russia_no" name="study_russia" value="no">
+                    <label for="study_russia_no">Yo'q</label>
+                </div>
+            </div>
+            <!-- Subject selection (hidden by default) -->
+            <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg" id="subject-form-wrapper" style="display: none;">
+                <h1 class="text-2xl font-bold mb-6 text-center">Выберите предмет</h1>
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="subjects" value="maths" class="h-5 w-5 text-indigo-600">
+                        <span class="ml-2 text-gray-700">Математика</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="subjects" value="psychology" class="h-5 w-5 text-indigo-600">
+                        <span class="ml-2 text-gray-700">Психология</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="subjects" value="russian" class="h-5 w-5 text-indigo-600">
+                        <span class="ml-2 text-gray-700">Русский язык</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="subjects" value="physics" class="h-5 w-5 text-indigo-600">
+                        <span class="ml-2 text-gray-700">Физика</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="subjects" value="chemistry" class="h-5 w-5 text-indigo-600">
+                        <span class="ml-2 text-gray-700">Химия</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="subjects" value="english" class="h-5 w-5 text-indigo-600">
+                        <span class="ml-2 text-gray-700">Английский язык</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="subjects" value="biology" class="h-5 w-5 text-indigo-600">
+                        <span class="ml-2 text-gray-700">Биология</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="subjects" value="informatics" class="h-5 w-5 text-indigo-600">
+                        <span class="ml-2 text-gray-700">Информатика</span>
+                    </label>
+                </div>
+                <p id="subjectsError" class="text-red-500 text-sm hidden">Пожалуйста, выберите не более 3 предметов.</p>
+            </div>
+            <button type="submit" class="w-full bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700 mt-4">Yuborish</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

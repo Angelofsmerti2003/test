@@ -1,0 +1,16 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
+
+label {
+    cursor: pointer;
+}

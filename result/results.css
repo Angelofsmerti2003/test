@@ -1,0 +1,14 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+#selectedSubjects {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #e5e7eb;
+}
+
+a {
+    transition: background-color 0.3s ease;
+}

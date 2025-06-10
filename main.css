@@ -1,0 +1,129 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f6fa;
+    margin: 0;
+    padding: 0;
+}
+.video-container iframe{
+    width: 100%;
+    height: 400px;
+}
+.wrapper-form {
+    max-width: 600px;
+    margin: 40px auto 24px auto;
+    padding: 24px;
+    background: #f7f6fa;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(80, 80, 120, 0.08);
+}
+
+.wrapper-form h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    color: #4b3ca7;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(80, 80, 120, 0.06);
+    padding: 20px 24px 16px 24px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.2s;
+}
+
+.card label {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card input[type="text"],
+.card input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #d1d1e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    background: #fafaff;
+    transition: border-color 0.2s;
+}
+
+.card input[type="text"]:focus,
+.card input[type="number"]:focus {
+    border-color: #4b3ca7;
+    outline: none;
+}
+
+.card div {
+    margin-bottom: 6px;
+}
+
+.card input[type="radio"] {
+    accent-color: #4b3ca7;
+    margin-right: 8px;
+}
+
+.card input[type="radio"] + label {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #444;
+    margin-right: 18px;
+    cursor: pointer;
+    display: inline;
+}
+
+.bg-white {
+    background: #fff !important;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(80, 80, 120, 0.06);
+    margin-bottom: 24px;
+}
+
+.p-8 {
+    padding: 32px !important;
+}
+
+.rounded-lg {
+    border-radius: 16px !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 24px rgba(80, 80, 120, 0.08) !important;
+}
+
+.max-w-lg {
+    max-width: 600px !important;
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+button {
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .wrapper-form, .max-w-lg {
+        max-width: 98vw !important;
+        padding: 8px !important;
+    }
+    .card, .p-8 {
+        padding: 12px 8px 10px 8px !important;
+    }
+}

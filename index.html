@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirish Formasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .video-container {
+            margin-bottom: 20px;
+        }
+
+        .login-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <!-- YouTube Video Embed -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/yOQg01BTj2o?si=W8l1FUYiSPeyLv65"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+        <h1 class="video_title">Video haqida</h1>
+        <h3 class="video_description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magnam!</h3>
+        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magnam!</h3>
+        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magnam!</h3>
+        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magnam!</h3>
+    </div>
+
+    
+    <!-- Login Form -->
+    <div class="login-form">
+        <h2>Kirish Formasi</h2>
+        <div class="form-group">
+            <label for="name">Ism:</label>
+            <input type="text" id="name" placeholder="Ismingizni kiriting" required>
+        </div>
+        <div class="form-group">
+            <label for="secondName">Familiya:</label>
+            <input type="text" id="secondName" placeholder="Familiyangizni kiriting" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefon Raqami:</label>
+            <input type="tel" id="phone" placeholder="Telefon raqamingizni kiriting" pattern="[0-9]{10}" required>
+        </div>
+        <button onclick="handleSubmit()">Yuborish</button>
+    </div>
+
+    <script>
+        function handleSubmit() {
+            const name = document.getElementById('name').value;
+            const secondName = document.getElementById('secondName').value;
+            const phone = document.getElementById('phone').value;
+
+            if (name && secondName && phone) {
+                // Save to localStorage
+                const loginFormData = { ism: name, familiya: secondName, telefon: phone };
+                localStorage.setItem('loginFormData', JSON.stringify(loginFormData));
+                alert(`Forma Yuborildi!\nIsm: ${name}\nFamiliya: ${secondName}\nTelefon: ${phone}`);
+                window.location.href = `main.html?name=${encodeURIComponent(name)}&secondName=${encodeURIComponent(secondName)}&phone=${encodeURIComponent(phone)}`;
+            } else {
+                alert('Iltimos, barcha maydonlarni to\'g\'ri to\'ldiring.');
+            }
+        }
+    </script>
+</body>
+
+</html>

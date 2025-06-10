@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбранные предметы</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="results.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+        <h1 class="text-2xl font-bold mb-6 text-center">Выбранные предметы</h1>
+        <div id="selectedSubjects" class="mt-6">
+            <ul id="subjectsList" class="list-disc pl-5"></ul>
+        </div>
+        <a href="../index.html" class="mt-6 inline-block w-full text-center bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700" onclick="window.location.href='quiz.html'; return false;">Перейти к тесту</a>
+    </div>
+    <script src="results.js"></script>
+</body>
+</html>

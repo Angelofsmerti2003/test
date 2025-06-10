@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по предметам</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+        <h1 class="text-2xl font-bold mb-6 text-center">Тест по выбранным предметам</h1>
+        <form id="quizForm" class="space-y-6">
+            <div id="quizQuestions"></div>
+            <button type="submit" class="w-full bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700">Завершить тест</button>
+        </form>
+        <a href="../index.html" class="mt-6 inline-block w-full text-center bg-gray-600 text-white p-2 rounded-md hover:bg-gray-700">Вернуться к выбору</a>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
